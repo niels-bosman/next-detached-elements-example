@@ -11,10 +11,10 @@ export default function Page() {
       >
         Back to Home
       </Link>
-      
-      <div>
+
+      <div className="debug-wrapper">
         {Array.from({ length: 20_000 }).map((_, i) => (
-          <div key={i}>Div {i + 1}</div>
+          <div key={i} className={`debug-child-${i}`}>Div {i + 1}</div>
         ))}
       </div>
     </div>
