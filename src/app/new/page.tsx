@@ -2,7 +2,10 @@
 
 import Link from "next/link";
 
+let renderCount = 0;
+
 export default function Page() {
+  const localRenderCount = renderCount++;
   return (
     <div className="p-4">
       <Link
@@ -14,7 +17,7 @@ export default function Page() {
 
       <div className="debug-wrapper">
         {Array.from({ length: 20_000 }).map((_, i) => (
-          <div key={i} className={`debug-child-${i}`}>Div {i + 1}</div>
+          <div className={`debug-child-${localRenderCount}-${i}`} key={i}>Div {i + 1}</div>
         ))}
       </div>
     </div>
